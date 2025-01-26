@@ -45,6 +45,10 @@ const fetchWeather = async (cityName: string) => {
 
   const weatherData = await response.json();
 
+  if (!weatherData) {
+    throw new Error('No data returned');
+  };
+
   renderCurrentWeather(weatherData[0]);
   renderForecast(weatherData.slice(1));
 };
