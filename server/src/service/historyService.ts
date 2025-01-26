@@ -42,7 +42,7 @@ class HistoryService {
     const newCity = new City(city, cities.length + 1);
     cities.push(newCity);
     await this.write(cities);
-    return newCity;
+    return cities;
   }
   // * BONUS TODO: Define a removeCity method that removes a city from the searchHistory.json file
   async removeCity(id: string) {
